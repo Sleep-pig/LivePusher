@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"sources/ui/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "widget_autogen_timestamp_deps::@876a1a779e0eb4564f7f",
+	"isGeneratorProvided" : true,
+	"name" : "widget_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "sources/ui",
+		"source" : "sources/ui"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

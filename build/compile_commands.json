@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/home/jie/workspace/cpp/QtCode/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/widget_autogen/mocs_compilation.cpp.o -c /home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/mocs_compilation.cpp",
+  "file": "/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/mocs_compilation.cpp",
+  "output": "sources/ui/CMakeFiles/widget.dir/widget_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/jie/workspace/cpp/QtCode/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/core/main.cpp.o -c /home/jie/workspace/cpp/QtCode/sources/ui/core/main.cpp",
+  "file": "/home/jie/workspace/cpp/QtCode/sources/ui/core/main.cpp",
+  "output": "sources/ui/CMakeFiles/widget.dir/core/main.cpp.o"
+},
+{
+  "directory": "/home/jie/workspace/cpp/QtCode/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/core/playimage.cpp.o -c /home/jie/workspace/cpp/QtCode/sources/ui/core/playimage.cpp",
+  "file": "/home/jie/workspace/cpp/QtCode/sources/ui/core/playimage.cpp",
+  "output": "sources/ui/CMakeFiles/widget.dir/core/playimage.cpp.o"
+},
+{
+  "directory": "/home/jie/workspace/cpp/QtCode/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/core/readthread.cpp.o -c /home/jie/workspace/cpp/QtCode/sources/ui/core/readthread.cpp",
+  "file": "/home/jie/workspace/cpp/QtCode/sources/ui/core/readthread.cpp",
+  "output": "sources/ui/CMakeFiles/widget.dir/core/readthread.cpp.o"
+},
+{
+  "directory": "/home/jie/workspace/cpp/QtCode/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/core/videodecode.cpp.o -c /home/jie/workspace/cpp/QtCode/sources/ui/core/videodecode.cpp",
+  "file": "/home/jie/workspace/cpp/QtCode/sources/ui/core/videodecode.cpp",
+  "output": "sources/ui/CMakeFiles/widget.dir/core/videodecode.cpp.o"
+},
+{
+  "directory": "/home/jie/workspace/cpp/QtCode/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/core/videosave.cpp.o -c /home/jie/workspace/cpp/QtCode/sources/ui/core/videosave.cpp",
+  "file": "/home/jie/workspace/cpp/QtCode/sources/ui/core/videosave.cpp",
+  "output": "sources/ui/CMakeFiles/widget.dir/core/videosave.cpp.o"
+},
+{
+  "directory": "/home/jie/workspace/cpp/QtCode/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/core/widget.cpp.o -c /home/jie/workspace/cpp/QtCode/sources/ui/core/widget.cpp",
+  "file": "/home/jie/workspace/cpp/QtCode/sources/ui/core/widget.cpp",
+  "output": "sources/ui/CMakeFiles/widget.dir/core/widget.cpp.o"
+}
+]

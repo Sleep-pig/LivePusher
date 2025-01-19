@@ -1,0 +1,14 @@
+# ninja log v6
+2	1218	1737177714108240478	sources/ui/CMakeFiles/ui.dir/core/main.cpp.o	415a0ed9e5df210b
+26	1017	1737215138751754825	sources/ui/CMakeFiles/widget.dir/core/videosave.cpp.o	2184c82e481792dc
+27	1353	1737220139178198828	sources/ui/CMakeFiles/widget.dir/core/playimage.cpp.o	6c404bc3477dbd04
+164	1741	1737220966387733705	sources/ui/CMakeFiles/widget.dir/core/main.cpp.o	564f7e6bb5912052
+164	1542	1737220966387733705	sources/ui/CMakeFiles/widget.dir/core/readthread.cpp.o	8e645bdb26220151
+25	1189	1737215108355494906	sources/ui/CMakeFiles/widget.dir/core/videodecode.cpp.o	6caec3ff2f7c7e6e
+1760	2066	1737221866020161106	/home/jie/workspace/cpp/QtCode/widget	fa717ce5a72d931c
+3	34	1737221864263508881	sources/ui/widget_autogen/timestamp	db9379aaf6cdafda
+3	34	1737221864263508881	sources/ui/widget_autogen/mocs_compilation.cpp	db9379aaf6cdafda
+3	34	1737221864263508881	/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/timestamp	db9379aaf6cdafda
+3	34	1737221864263508881	/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/mocs_compilation.cpp	db9379aaf6cdafda
+164	1746	1737220966387733705	sources/ui/CMakeFiles/widget.dir/widget_autogen/mocs_compilation.cpp.o	6c32e82aceda2eaf
+35	1759	1737221864293508634	sources/ui/CMakeFiles/widget.dir/core/widget.cpp.o	c207385ca8d5af20

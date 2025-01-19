@@ -1,0 +1,7 @@
+/home/jie/workspace/cpp/QtCode/build/CMakeFiles/edit_cache.dir
+/home/jie/workspace/cpp/QtCode/build/CMakeFiles/rebuild_cache.dir
+/home/jie/workspace/cpp/QtCode/build/sources/ui/CMakeFiles/widget.dir
+/home/jie/workspace/cpp/QtCode/build/sources/ui/CMakeFiles/edit_cache.dir
+/home/jie/workspace/cpp/QtCode/build/sources/ui/CMakeFiles/rebuild_cache.dir
+/home/jie/workspace/cpp/QtCode/build/sources/ui/CMakeFiles/widget_autogen_timestamp_deps.dir
+/home/jie/workspace/cpp/QtCode/build/sources/ui/CMakeFiles/widget_autogen.dir

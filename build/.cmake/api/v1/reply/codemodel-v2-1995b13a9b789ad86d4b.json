@@ -1,0 +1,94 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "sources/ui",
+					"jsonFile" : "directory-sources.ui-Debug-99c6cb3fbbb6071c930c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "sources/ui",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "Face",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "widget::@876a1a779e0eb4564f7f",
+					"jsonFile" : "target-widget-Debug-79678c2229de3959c70a.json",
+					"name" : "widget",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "widget_autogen::@876a1a779e0eb4564f7f",
+					"jsonFile" : "target-widget_autogen-Debug-2f5bfad1d468dcc1c74c.json",
+					"name" : "widget_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "widget_autogen_timestamp_deps::@876a1a779e0eb4564f7f",
+					"jsonFile" : "target-widget_autogen_timestamp_deps-Debug-e349d94cc300f58c826b.json",
+					"name" : "widget_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jie/workspace/cpp/QtCode/build",
+		"source" : "/home/jie/workspace/cpp/QtCode"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
