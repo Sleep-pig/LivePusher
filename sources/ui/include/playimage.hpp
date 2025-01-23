@@ -34,6 +34,8 @@ public:
     ~PlayImage() override;
 
     void repaint(AVFrame *frame); // 重绘
+    void clear();
+    void start(); // 开始播放
 
 protected:
     void initializeGL() override;         // 初始化gl
@@ -55,4 +57,6 @@ private:
     QSize m_size;
     QSizeF m_zoomSize;
     QPointF m_pos;
+
+    bool isStop = true;
 };

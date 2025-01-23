@@ -1,5 +1,6 @@
 #include "playimage.hpp"
 #include <qdir.h>
+#include <qglobal.h>
 #include <qlocale.h>
 
 extern "C" { // 用C规则编译指定的代码
@@ -145,7 +146,8 @@ void PlayImage::initializeGL() {
 
     // 加载shader脚本程序
     m_program = new QOpenGLShaderProgram(this);
-    m_program->addShaderFromSourceFile(QOpenGLShader::Vertex, QDir::currentPath() + "/vertex.vsh");
+    m_program->addShaderFromSourceFile(QOpenGLShader::Vertex,
+                                       QDir::currentPath() + "/vertex.vsh");
     m_program->addShaderFromSourceFile(QOpenGLShader::Fragment,
                                        QDir::currentPath() + "/fragment.fsh");
     m_program->link();
@@ -195,8 +197,10 @@ void PlayImage::initializeGL() {
     glVertexAttribPointer(
         texCord, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat),
         reinterpret_cast<GLvoid const *>(
-            3 * sizeof(GLfloat))); // 指定当前绑定到目标的缓冲区的数据存储中数组中第一个通用顶点属性的第一个组件的偏移量。初始值为0
-                                   // (一个数组从第几个字节开始读)
+            3 *
+            sizeof(
+                GLfloat))); // 指定当前绑定到目标的缓冲区的数据存储中数组中第一个通用顶点属性的第一个组件的偏移量。初始值为0
+                            // (一个数组从第几个字节开始读)
     // 启用通用顶点属性数组
     glEnableVertexAttribArray(
         texCord); // 属性索引是从调用glGetAttribLocation接收的，或者传递给glBindAttribLocation。
@@ -230,6 +234,10 @@ void PlayImage::resizeGL(int w, int h) {
 }
 
 void PlayImage::paintGL() {
+    if (isStop) {
+        QOpenGLWidget::paintGL();
+        return;
+    }
     glClear(
         GL_COLOR_BUFFER_BIT); // 将窗口的位平面区域（背景）设置为先前由glClearColor、glClearDepth和选择的值
     glViewport(m_pos.x(), m_pos.y(), m_zoomSize.width(),
@@ -257,4 +265,16 @@ void PlayImage::paintGL() {
         m_texV->release();
     }
     m_program->release();
+}
+
+void PlayImage::clear() {
+    qDebug() << "clear";
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // RGBA 黑色
+    glClear(GL_COLOR_BUFFER_BIT);
+    isStop = true;
+    update();
+}
+
+void PlayImage::start() {
+    isStop = false;
 }

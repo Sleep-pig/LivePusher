@@ -3,6 +3,7 @@
 #include <QFileDialog>
 #include <QLabel>
 #include <QLineEdit>
+#include <qglobal.h>
 #include <qpushbutton.h>
 #include <QVBoxLayout>
 
@@ -82,9 +83,12 @@ Widget::~Widget() {
 void Widget::on_btn_open_clicked() {
     if (playButton->text() == "开始播放") {
         playButton->setText("停止播放");
+        playImage->start();
         m_readThread->open(com_url->currentText());
     } else {
         playButton->setText("开始播放");
+        playImage->clear();
+        this->update();
         m_readThread->close();
     }
 }
@@ -92,16 +96,16 @@ void Widget::on_btn_open_clicked() {
 void Widget::on_playState(ReadThread::PlayState state) {
     if (state == ReadThread::play) {
         this->setWindowTitle(QString("正在播放：%1").arg(m_readThread->url()));
-        playButton->setText("停止播放");
+        //playButton->setText("停止播放");
     } else {
-        playButton->setText("开始播放");
+        //playButton->setText("开始播放");
         this->setWindowTitle(QString("Qt+ffmpeg打开本地摄像头录像Demo "));
     }
 }
 
 void Widget::on_btn_save_clicked() {
     if (recordButton->text() == "开始录制") {
-        m_readThread->saveVideo(QString("%1.mp4").arg(
+        m_readThread->saveVideo(QString("%1.h264").arg(
             QDateTime::currentDateTime().toString("yyyy-MM-dd_HH-mm-ss")));
         recordButton->setText("停止");
     } else {

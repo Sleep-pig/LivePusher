@@ -75,6 +75,7 @@ bool VideoSave::open(AVStream *inStream, QString const &filename) {
     // 查询编码器
     AVCodec const *codec =
         avcodec_find_encoder(m_formatContext->oformat->video_codec);
+    qDebug() << "codec: " << codec->name;
     if (!codec) {
         close();
         showError(AVERROR(ENOMEM));
@@ -108,10 +109,10 @@ bool VideoSave::open(AVStream *inStream, QString const &filename) {
     m_codecContext->bit_rate =
         4'000'000; // 目标的码率，即采样的码率；显然，采样码率越大，视频大小越大，画质越高
     m_codecContext->gop_size = 10; // I帧间隔
-    m_codecContext->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+    //m_codecContext->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 
     // 打开编码器
-    ret = avcodec_open2(m_codecContext, nullptr, nullptr);
+    // ret = avcodec_open2(m_codecContext, nullptr, nullptr);
 #if USE_H264
     ret = avcodec_open2(
         m_codecContext, codec,
@@ -187,8 +188,10 @@ void VideoSave::write(AVFrame *frame) {
 
         // 将数据包中的有效时间字段（时间戳/持续时间）从一个时基转换为
         // 输出流的时间
-        av_packet_rescale_ts(m_packet, m_codecContext->time_base,
-                             m_videostream->time_base);
+        av_packet_rescale_ts(m_packet, m_videostream->time_base,
+                             m_codecContext->time_base);
+        // av_interleaved_write_frame(m_formatContext, m_packet); //
+        // 将数据包写入输出媒体文件
         av_write_frame(m_formatContext, m_packet); // 将数据包写入输出媒体文件
         av_packet_unref(m_packet);
     }
