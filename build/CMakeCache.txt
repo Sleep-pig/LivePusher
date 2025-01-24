@@ -223,65 +223,17 @@ Face_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Face_SOURCE_DIR:STATIC=/home/jie/workspace/cpp/QtCode
 
-//Value Computed by CMake
-Player_BINARY_DIR:STATIC=/home/jie/workspace/cpp/QtCode/build/sources/ui
-
-//Value Computed by CMake
-Player_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-Player_SOURCE_DIR:STATIC=/home/jie/workspace/cpp/QtCode/sources/ui
-
 //The directory containing a CMake configuration file for Qt5Core.
 Qt5Core_DIR:PATH=/usr/lib/cmake/Qt5Core
 
 //The directory containing a CMake configuration file for Qt5Gui.
 Qt5Gui_DIR:PATH=/usr/lib/cmake/Qt5Gui
 
-//The directory containing a CMake configuration file for Qt5MuREQUIRED.
-Qt5MuREQUIRED_DIR:PATH=Qt5MuREQUIRED_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5Mu.
-Qt5Mu_DIR:PATH=Qt5Mu_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5MultREQUIRED.
-Qt5MultREQUIRED_DIR:PATH=Qt5MultREQUIRED_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5Multimedai.
-Qt5Multimedai_DIR:PATH=Qt5Multimedai_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5MultimediaREQUIRED.
-Qt5MultimediaREQUIRED_DIR:PATH=Qt5MultimediaREQUIRED_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5MultimediaWiREQUIRED.
-Qt5MultimediaWiREQUIRED_DIR:PATH=Qt5MultimediaWiREQUIRED_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5MultimediaWidREQUIRED.
-Qt5MultimediaWidREQUIRED_DIR:PATH=Qt5MultimediaWidREQUIRED_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5MultimediaWidget.
-Qt5MultimediaWidget_DIR:PATH=Qt5MultimediaWidget_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for Qt5MultimediaWidgets.
 Qt5MultimediaWidgets_DIR:PATH=/usr/lib/cmake/Qt5MultimediaWidgets
 
 //The directory containing a CMake configuration file for Qt5Multimedia.
 Qt5Multimedia_DIR:PATH=/usr/lib/cmake/Qt5Multimedia
-
-//The directory containing a CMake configuration file for Qt5Multimediawidget.
-Qt5Multimediawidget_DIR:PATH=Qt5Multimediawidget_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5Multimediawidgets.
-Qt5Multimediawidgets_DIR:PATH=Qt5Multimediawidgets_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5Mut.
-Qt5Mut_DIR:PATH=Qt5Mut_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5Mutilmedia.
-Qt5Mutilmedia_DIR:PATH=Qt5Mutilmedia_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5Mutimedia.
-Qt5Mutimedia_DIR:PATH=Qt5Mutimedia_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for Qt5Network.
 Qt5Network_DIR:PATH=/usr/lib/cmake/Qt5Network
@@ -291,12 +243,6 @@ Qt5Widgets_DIR:PATH=/usr/lib/cmake/Qt5Widgets
 
 //The directory containing a CMake configuration file for Qt5.
 Qt5_DIR:PATH=/usr/lib/cmake/Qt5
-
-//The directory containing a CMake configuration file for Qt5m.
-Qt5m_DIR:PATH=Qt5m_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5mutilmedia.
-Qt5mutilmedia_DIR:PATH=Qt5mutilmedia_DIR-NOTFOUND
 
 
 ########################

@@ -1194,42 +1194,6 @@
 			"value" : "/home/jie/workspace/cpp/QtCode"
 		},
 		{
-			"name" : "Player_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/jie/workspace/cpp/QtCode/build/sources/ui"
-		},
-		{
-			"name" : "Player_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "OFF"
-		},
-		{
-			"name" : "Player_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/jie/workspace/cpp/QtCode/sources/ui"
-		},
-		{
 			"name" : "Qt5Core_DIR",
 			"properties" : 
 			[
@@ -1254,102 +1218,6 @@
 			"value" : "/usr/lib/cmake/Qt5Gui"
 		},
 		{
-			"name" : "Qt5MuREQUIRED_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5MuREQUIRED."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5MuREQUIRED_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5Mu_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5Mu."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5Mu_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5MultREQUIRED_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5MultREQUIRED."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5MultREQUIRED_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5Multimedai_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5Multimedai."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5Multimedai_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5MultimediaREQUIRED_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5MultimediaREQUIRED."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5MultimediaREQUIRED_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5MultimediaWiREQUIRED_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5MultimediaWiREQUIRED."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5MultimediaWiREQUIRED_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5MultimediaWidREQUIRED_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5MultimediaWidREQUIRED."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5MultimediaWidREQUIRED_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5MultimediaWidget_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5MultimediaWidget."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5MultimediaWidget_DIR-NOTFOUND"
-		},
-		{
 			"name" : "Qt5MultimediaWidgets_DIR",
 			"properties" : 
 			[
@@ -1372,66 +1240,6 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/lib/cmake/Qt5Multimedia"
-		},
-		{
-			"name" : "Qt5Multimediawidget_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5Multimediawidget."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5Multimediawidget_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5Multimediawidgets_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5Multimediawidgets."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5Multimediawidgets_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5Mut_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5Mut."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5Mut_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5Mutilmedia_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5Mutilmedia."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5Mutilmedia_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5Mutimedia_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5Mutimedia."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5Mutimedia_DIR-NOTFOUND"
 		},
 		{
 			"name" : "Qt5Network_DIR",
@@ -1468,30 +1276,6 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/lib/cmake/Qt5"
-		},
-		{
-			"name" : "Qt5m_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5m."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5m_DIR-NOTFOUND"
-		},
-		{
-			"name" : "Qt5mutilmedia_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5mutilmedia."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt5mutilmedia_DIR-NOTFOUND"
 		},
 		{
 			"name" : "_CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED",

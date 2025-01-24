@@ -86,6 +86,14 @@ build sources/ui/CMakeFiles/widget.dir/widget_autogen/mocs_compilation.cpp.o: CX
   OBJECT_DIR = sources/ui/CMakeFiles/widget.dir
   OBJECT_FILE_DIR = sources/ui/CMakeFiles/widget.dir/widget_autogen
 
+build sources/ui/CMakeFiles/widget.dir/core/audiosave.cpp.o: CXX_COMPILER__widget_unscanned_Debug /home/jie/workspace/cpp/QtCode/sources/ui/core/audiosave.cpp || cmake_object_order_depends_target_widget
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = sources/ui/CMakeFiles/widget.dir/core/audiosave.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fPIC
+  INCLUDES = -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets
+  OBJECT_DIR = sources/ui/CMakeFiles/widget.dir
+  OBJECT_FILE_DIR = sources/ui/CMakeFiles/widget.dir/core
+
 build sources/ui/CMakeFiles/widget.dir/core/main.cpp.o: CXX_COMPILER__widget_unscanned_Debug /home/jie/workspace/cpp/QtCode/sources/ui/core/main.cpp || cmake_object_order_depends_target_widget
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
   DEP_FILE = sources/ui/CMakeFiles/widget.dir/core/main.cpp.o.d
@@ -142,7 +150,7 @@ build sources/ui/CMakeFiles/widget.dir/core/widget.cpp.o: CXX_COMPILER__widget_u
 #############################################
 # Link the executable /home/jie/workspace/cpp/QtCode/widget
 
-build /home/jie/workspace/cpp/QtCode/widget: CXX_EXECUTABLE_LINKER__widget_Debug sources/ui/CMakeFiles/widget.dir/widget_autogen/mocs_compilation.cpp.o sources/ui/CMakeFiles/widget.dir/core/main.cpp.o sources/ui/CMakeFiles/widget.dir/core/playimage.cpp.o sources/ui/CMakeFiles/widget.dir/core/readthread.cpp.o sources/ui/CMakeFiles/widget.dir/core/videodecode.cpp.o sources/ui/CMakeFiles/widget.dir/core/videosave.cpp.o sources/ui/CMakeFiles/widget.dir/core/widget.cpp.o | /usr/lib/libQt5MultimediaWidgets.so.5.15.16 /usr/lib/libQt5Widgets.so.5.15.16 /usr/lib/libQt5Multimedia.so.5.15.16 /usr/lib/libQt5Network.so.5.15.16 /usr/lib/libQt5Gui.so.5.15.16 /usr/lib/libQt5Core.so.5.15.16 || sources/ui/widget_autogen sources/ui/widget_autogen_timestamp_deps
+build /home/jie/workspace/cpp/QtCode/widget: CXX_EXECUTABLE_LINKER__widget_Debug sources/ui/CMakeFiles/widget.dir/widget_autogen/mocs_compilation.cpp.o sources/ui/CMakeFiles/widget.dir/core/audiosave.cpp.o sources/ui/CMakeFiles/widget.dir/core/main.cpp.o sources/ui/CMakeFiles/widget.dir/core/playimage.cpp.o sources/ui/CMakeFiles/widget.dir/core/readthread.cpp.o sources/ui/CMakeFiles/widget.dir/core/videodecode.cpp.o sources/ui/CMakeFiles/widget.dir/core/videosave.cpp.o sources/ui/CMakeFiles/widget.dir/core/widget.cpp.o | /usr/lib/libQt5MultimediaWidgets.so.5.15.16 /usr/lib/libQt5Widgets.so.5.15.16 /usr/lib/libQt5Multimedia.so.5.15.16 /usr/lib/libQt5Network.so.5.15.16 /usr/lib/libQt5Gui.so.5.15.16 /usr/lib/libQt5Core.so.5.15.16 || sources/ui/widget_autogen sources/ui/widget_autogen_timestamp_deps
   DEP_FILE = sources/ui/CMakeFiles/widget.dir/link.d
   FLAGS = -g
   LINK_FLAGS = -Wl,--dependency-file=sources/ui/CMakeFiles/widget.dir/link.d

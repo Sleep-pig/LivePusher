@@ -81,6 +81,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/jie/workspace/cpp/QtCode/sources/ui/include/audiosave.hpp",
+			"MU",
+			"6YEA5652QU/moc_audiosave.cpp",
+			null
+		],
+		[
 			"/home/jie/workspace/cpp/QtCode/sources/ui/include/playimage.hpp",
 			"MU",
 			"6YEA5652QU/moc_playimage.cpp",
@@ -175,6 +181,11 @@
 	"SETTINGS_FILE" : "/home/jie/workspace/cpp/QtCode/build/sources/ui/CMakeFiles/widget_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/jie/workspace/cpp/QtCode/sources/ui/core/audiosave.cpp",
+			"MU",
+			null
+		],
 		[ "/home/jie/workspace/cpp/QtCode/sources/ui/core/main.cpp", "MU", null ],
 		[
 			"/home/jie/workspace/cpp/QtCode/sources/ui/core/playimage.cpp",

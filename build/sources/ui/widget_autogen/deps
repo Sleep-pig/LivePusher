@@ -1,12 +1,14 @@
 widget_autogen/timestamp: \
 	/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/moc_predefs.h \
 	/home/jie/workspace/cpp/QtCode/sources/ui/CMakeLists.txt \
+	/home/jie/workspace/cpp/QtCode/sources/ui/core/audiosave.cpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/core/main.cpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/core/playimage.cpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/core/readthread.cpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/core/videodecode.cpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/core/videosave.cpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/core/widget.cpp \
+	/home/jie/workspace/cpp/QtCode/sources/ui/include/audiosave.hpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/include/playimage.hpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/include/readthread.hpp \
 	/home/jie/workspace/cpp/QtCode/sources/ui/include/videodecode.hpp \
@@ -370,6 +372,14 @@ widget_autogen/timestamp: \
 	/usr/include/qt/QtGui/qvector3d.h \
 	/usr/include/qt/QtGui/qvector4d.h \
 	/usr/include/qt/QtGui/qwindowdefs.h \
+	/usr/include/qt/QtMultimedia/QAudioInput \
+	/usr/include/qt/QtMultimedia/qaudio.h \
+	/usr/include/qt/QtMultimedia/qaudiodeviceinfo.h \
+	/usr/include/qt/QtMultimedia/qaudioformat.h \
+	/usr/include/qt/QtMultimedia/qaudioinput.h \
+	/usr/include/qt/QtMultimedia/qmultimedia.h \
+	/usr/include/qt/QtMultimedia/qtmultimedia-config.h \
+	/usr/include/qt/QtMultimedia/qtmultimediaglobal.h \
 	/usr/include/qt/QtWidgets/QComboBox \
 	/usr/include/qt/QtWidgets/QOpenGLWidget \
 	/usr/include/qt/QtWidgets/QPushButton \

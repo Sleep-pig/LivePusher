@@ -7,6 +7,12 @@
 },
 {
   "directory": "/home/jie/workspace/cpp/QtCode/build",
+  "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/core/audiosave.cpp.o -c /home/jie/workspace/cpp/QtCode/sources/ui/core/audiosave.cpp",
+  "file": "/home/jie/workspace/cpp/QtCode/sources/ui/core/audiosave.cpp",
+  "output": "sources/ui/CMakeFiles/widget.dir/core/audiosave.cpp.o"
+},
+{
+  "directory": "/home/jie/workspace/cpp/QtCode/build",
   "command": "/usr/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -I/home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/include -I/usr/include/ffmpeg5.1.6 -I/home/jie/workspace/cpp/QtCode/sources/ui/include -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtWidgets -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtMultimedia -isystem /usr/include/qt/QtNetwork -isystem /usr/include/qt/QtMultimediaWidgets -g -std=gnu++17 -fPIC -o sources/ui/CMakeFiles/widget.dir/core/main.cpp.o -c /home/jie/workspace/cpp/QtCode/sources/ui/core/main.cpp",
   "file": "/home/jie/workspace/cpp/QtCode/sources/ui/core/main.cpp",
   "output": "sources/ui/CMakeFiles/widget.dir/core/main.cpp.o"
