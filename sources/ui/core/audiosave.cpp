@@ -1,9 +1,14 @@
 #include "audiosave.hpp"
+#include <cstdint>
 #include <cstring>
 #include <qaudiodeviceinfo.h>
 #include <qaudioformat.h>
+#include <qaudioinput.h>
 #include <qdebug.h>
+#include <qfileinfo.h>
 #include <qglobal.h>
+#include <qmutex.h>
+#include <qthread.h>
 
 extern "C" {
 #include "libavcodec/avcodec.h"
@@ -30,13 +35,11 @@ AudioSave::AudioSave(QObject *parent) : QObject(parent) {
     }
     audioInput = new QAudioInput(out_format, this);
 
-    connect(inputDevice, &QIODevice::readyRead,
-            [=]() { QByteArray pcmData = inputDevice->readAll(); });
+    // audioInput->setBufferSize(4096);
 }
 
 AudioSave::~AudioSave() {
     stopRecord();
-    cleanupFFmpeg();
 }
 
 bool AudioSave::open(QString const &filename) {
@@ -46,16 +49,26 @@ bool AudioSave::open(QString const &filename) {
     if (!initFFmpeg(filename)) {
         return false;
     }
+    inputDevice = audioInput->start();
     return true;
 }
 
 void AudioSave::startRecord() {
-    inputDevice = audioInput->start();
+    if (!isRecording) {
+        isRecording = true;
+    }
 }
 
 void AudioSave::stopRecord() {
-    audioInput->stop();
-    av_write_trailer(fmtCtx);
+    if (isRecording) {
+        inputDevice->close();
+        audioInput->stop();
+        // flush();
+        av_write_trailer(fmtCtx);
+        cleanupFFmpeg();
+        isRecording = false;
+        return;
+    }
 }
 
 bool AudioSave::initFFmpeg(QString const &filename) {
@@ -88,8 +101,9 @@ bool AudioSave::initFFmpeg(QString const &filename) {
     codecCtx->sample_fmt = AV_SAMPLE_FMT_FLTP;
     codecCtx->sample_rate = 44100;
     codecCtx->ch_layout = AV_CHANNEL_LAYOUT_STEREO;
-    codecCtx->bit_rate = 128000;
+    // codecCtx->bit_rate = 128000;
     codecCtx->ch_layout.nb_channels = 2;
+    codecCtx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 
     ret = avcodec_open2(codecCtx, codec, nullptr);
     if (ret < 0) {
@@ -109,13 +123,6 @@ bool AudioSave::initFFmpeg(QString const &filename) {
         return false;
     }
 
-    pcmFrame = av_frame_alloc();
-    swrFrame = av_frame_alloc();
-    if (pcmFrame == nullptr || swrFrame == nullptr) {
-        qDebug() << "alloc frame failed";
-        return false;
-    }
-
     pkt = av_packet_alloc();
     if (!pkt) {
         qDebug() << "alloc packet failed";
@@ -125,7 +132,6 @@ bool AudioSave::initFFmpeg(QString const &filename) {
     AVChannelLayout out_ch_layout = codecCtx->ch_layout;
     AVChannelLayout in_ch_layout = AV_CHANNEL_LAYOUT_STEREO;
 
-    swrCtx = swr_alloc();
     ret = swr_alloc_set_opts2(&swrCtx, &out_ch_layout, codecCtx->sample_fmt,
                               codecCtx->sample_rate, &in_ch_layout,
                               AV_SAMPLE_FMT_S16, 44100, 0, nullptr);
@@ -145,6 +151,7 @@ bool AudioSave::initFFmpeg(QString const &filename) {
 }
 
 void AudioSave::cleanupFFmpeg() {
+    count = 0;
     if (swrCtx) {
         swr_free(&swrCtx);
         swrCtx = nullptr;
@@ -161,10 +168,6 @@ void AudioSave::cleanupFFmpeg() {
         avcodec_close(codecCtx);
         codecCtx = nullptr;
     }
-    if (pcmFrame) {
-        av_frame_free(&pcmFrame);
-        pcmFrame = nullptr;
-    }
     if (swrFrame) {
         av_frame_free(&swrFrame);
         swrFrame = nullptr;
@@ -173,6 +176,8 @@ void AudioSave::cleanupFFmpeg() {
         av_packet_free(&pkt);
         pkt = nullptr;
     }
+    isInitFFmpeg = false;
+    delete [] out_buffer;
 }
 
 void AudioSave::ShowError(int err) {
@@ -181,27 +186,9 @@ void AudioSave::ShowError(int err) {
     qDebug() << "error: " << str;
 }
 
-bool AudioSave::Swrconvert(QByteArray const &data) {
-    pcmFrame->ch_layout = AV_CHANNEL_LAYOUT_STEREO;
-    pcmFrame->sample_rate = 44100;
-    pcmFrame->format = AV_SAMPLE_FMT_S16;
-    pcmFrame->nb_samples = data.size() / 4; // 2 channels, 16 bits per sample
-    int ret = av_frame_get_buffer(pcmFrame, 0);
-    if (ret < 0) {
-        ShowError(ret);
-        return false;
-    }
-    memcpy(pcmFrame->data[0], data.constData(), data.size());
-    swrFrame->ch_layout = codecCtx->ch_layout;
-    swrFrame->sample_rate = 44100;
-    swrFrame->format = codecCtx->sample_fmt;
-    swrFrame->nb_samples = pcmFrame->nb_samples;
-    ret = av_frame_get_buffer(swrFrame, 0);
-    if (ret < 0) {
-        ShowError(ret);
-        return false;
-    }
-    ret = swr_convert_frame(swrCtx, swrFrame, pcmFrame);
+bool AudioSave::Swrconvert(char **buf) {
+    int ret = swr_convert(swrCtx, swrFrame->data, swrFrame->nb_samples,
+                          (uint8_t const **)buf, 1024);
     if (ret < 0) {
         ShowError(ret);
         return false;
@@ -209,16 +196,65 @@ bool AudioSave::Swrconvert(QByteArray const &data) {
     return true;
 }
 
-void AudioSave::writeAudioData(QByteArray const &data) {
-    if (data.isEmpty()) {
-        qDebug() << "data is empty";
-        return;
+char *AudioSave::ReadData() {
+    if (fmtCtx == nullptr) {
+        return 0;
     }
-    if (!Swrconvert(data)) {
+    AVSampleFormat fmt = AV_SAMPLE_FMT_S16;
+    int pcmSize = av_get_bytes_per_sample((AVSampleFormat)fmt) * 2 * 1024;
+    out_buffer = (char *)av_malloc(pcmSize);
+    if (audioInput->bytesReady() >= pcmSize) {
+        int size = 0;
+        while (size != pcmSize) {
+            int len = inputDevice->read(out_buffer + size, pcmSize - size);
+            if (len < 0) {
+                qDebug() << "read data failed";
+                return nullptr;
+            }
+
+            size += len;
+        }
+        return out_buffer;
+    }
+    return nullptr;
+}
+
+void AudioSave::writeAudioData() {
+    if (!isInitFFmpeg) {
+        isInitFFmpeg = true;
+        // pcmFrame = av_frame_alloc();
+        swrFrame = av_frame_alloc();
+        // if (pcmFrame == nullptr || swrFrame == nullptr) {
+        //     qDebug() << "alloc frame failed";
+        //     return;
+        // }
+        // pcmFrame->ch_layout = AV_CHANNEL_LAYOUT_STEREO;
+        // pcmFrame->sample_rate = 44100;
+        // pcmFrame->format = AV_SAMPLE_FMT_S16;
+        // pcmFrame->nb_samples =
+        //     data.size() / 4; // 2 channels, 16 bits per sample
+        // int ret = av_frame_get_buffer(pcmFrame, 0);
+        // if (ret < 0) {
+        //     ShowError(ret);
+        //     return;
+        // }
+        swrFrame->ch_layout = codecCtx->ch_layout;
+        swrFrame->sample_rate = 44100;
+        swrFrame->format = codecCtx->sample_fmt;
+        swrFrame->nb_samples = 1024;
+        int ret = av_frame_get_buffer(swrFrame, 0);
+        if (ret < 0) {
+            ShowError(ret);
+            return;
+        }
+    }
+
+    if (!Swrconvert(&out_buffer)) {
         qDebug() << "swr convert failed";
         return;
     }
 
+    qDebug() << "frame size:" << swrFrame->nb_samples;
     int ret = avcodec_send_frame(codecCtx, swrFrame);
     if (ret < 0) {
         ShowError(ret);
@@ -233,8 +269,32 @@ void AudioSave::writeAudioData(QByteArray const &data) {
             ShowError(ret);
             return;
         }
-        pkt->stream_index = 0;
-        ret = av_interleaved_write_frame(fmtCtx, pkt);
+        pkt->pts = pkt->dts = count;
+        count += 1024;
+        ret = av_write_frame(fmtCtx, pkt);
+        if (ret < 0) {
+            ShowError(ret);
+            return;
+        }
+        qDebug() << "write frame";
+        av_packet_unref(pkt);
+    }
+}
+
+void AudioSave::flush() {
+    QMutexLocker locker(&mutex);
+    int ret = 0;
+    // 停止时冲洗编码器
+    avcodec_send_frame(codecCtx, NULL); // 发送冲洗信号
+    while (1) {
+        ret = avcodec_receive_packet(codecCtx, pkt);
+        if (ret == AVERROR_EOF) {
+            break; // 编码器已无剩余数据
+        } else if (ret < 0 && ret != AVERROR(EAGAIN)) {
+            // 处理错误
+            break;
+        }
+        ret = av_write_frame(fmtCtx, pkt);
         if (ret < 0) {
             ShowError(ret);
             return;

@@ -256,6 +256,7 @@ widget_autogen/timestamp: \
 	/usr/include/linux/errno.h \
 	/usr/include/locale.h \
 	/usr/include/pthread.h \
+	/usr/include/qt/QtCore/QFile \
 	/usr/include/qt/QtCore/QObject \
 	/usr/include/qt/QtCore/QScopedPointer \
 	/usr/include/qt/QtCore/QSharedDataPointer \
@@ -280,6 +281,8 @@ widget_autogen/timestamp: \
 	/usr/include/qt/QtCore/qdeadlinetimer.h \
 	/usr/include/qt/QtCore/qdebug.h \
 	/usr/include/qt/QtCore/qelapsedtimer.h \
+	/usr/include/qt/QtCore/qfile.h \
+	/usr/include/qt/QtCore/qfiledevice.h \
 	/usr/include/qt/QtCore/qflags.h \
 	/usr/include/qt/QtCore/qgenericatomic.h \
 	/usr/include/qt/QtCore/qglobal.h \
@@ -295,6 +298,7 @@ widget_autogen/timestamp: \
 	/usr/include/qt/QtCore/qmap.h \
 	/usr/include/qt/QtCore/qmargins.h \
 	/usr/include/qt/QtCore/qmetatype.h \
+	/usr/include/qt/QtCore/qmutex.h \
 	/usr/include/qt/QtCore/qnamespace.h \
 	/usr/include/qt/QtCore/qnumeric.h \
 	/usr/include/qt/QtCore/qobject.h \
@@ -325,6 +329,7 @@ widget_autogen/timestamp: \
 	/usr/include/qt/QtCore/qtcore-config.h \
 	/usr/include/qt/QtCore/qtextstream.h \
 	/usr/include/qt/QtCore/qthread.h \
+	/usr/include/qt/QtCore/qtsan_impl.h \
 	/usr/include/qt/QtCore/qtypeinfo.h \
 	/usr/include/qt/QtCore/qvariant.h \
 	/usr/include/qt/QtCore/qvarlengtharray.h \

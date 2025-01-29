@@ -18,6 +18,7 @@
 ReadThread::ReadThread(QObject *parent) : QThread(parent) {
     m_videoDecode = new VideoDecode();
     m_videoSave = new VideoSave();
+    m_audioSave = new AudioSave();
 
     qRegisterMetaType<PlayState>("PlayState");
 }
@@ -28,6 +29,9 @@ ReadThread::~ReadThread() {
     }
     if (m_videoDecode) {
         delete m_videoDecode;
+    }
+    if(m_audioSave) {
+        delete m_audioSave;
     }
 }
 
@@ -50,8 +54,16 @@ void ReadThread::saveVideo(QString const &filename) {
     m_videoSave->open(m_videoDecode->getVideoStream(), filename);
 }
 
+void ReadThread::saveAudio(QString const &filename) {
+    if (!m_audioSave->open(filename)) {
+        return;
+    }
+    m_audioSave->startRecord();
+}
+
 void ReadThread::stop() {
     m_videoSave->close();
+    m_audioSave->stopRecord();
 }
 
 void sleepMsec(int msec) {
@@ -79,9 +91,14 @@ void ReadThread::run() {
         if (frame) {
             m_videoSave->write(frame);
             emit repaint(frame);
-        } else {
-            sleepMsec(1);
         }
+        
+        char* data = m_audioSave->ReadData();
+        if (data) {
+            m_audioSave->writeAudioData();
+        } else {
+            msleep(10);
+        }   
     }
     qDebug() << "close";
     m_videoDecode->close();

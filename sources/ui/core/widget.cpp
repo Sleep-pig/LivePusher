@@ -107,6 +107,8 @@ void Widget::on_btn_save_clicked() {
     if (recordButton->text() == "开始录制") {
         m_readThread->saveVideo(QString("%1.h264").arg(
             QDateTime::currentDateTime().toString("yyyy-MM-dd_HH-mm-ss")));
+        m_readThread->saveAudio(QString("%1.aac").arg(
+            QDateTime::currentDateTime().toString("yyyy-MM-dd_HH-mm-ss")));
         recordButton->setText("停止");
     } else {
         m_readThread->stop();

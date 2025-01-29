@@ -1,5 +1,6 @@
 /home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/6YEA5652QU/moc_widget.cpp: /home/jie/workspace/cpp/QtCode/sources/ui/include/widget.hpp \
   /home/jie/workspace/cpp/QtCode/build/sources/ui/widget_autogen/moc_predefs.h \
+  /home/jie/workspace/cpp/QtCode/sources/ui/include/audiosave.hpp \
   /home/jie/workspace/cpp/QtCode/sources/ui/include/playimage.hpp \
   /home/jie/workspace/cpp/QtCode/sources/ui/include/readthread.hpp \
   /usr/include/GL/gl.h \
@@ -244,6 +245,7 @@
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/qt/QtCore/QFile \
   /usr/include/qt/QtCore/QObject \
   /usr/include/qt/QtCore/QScopedPointer \
   /usr/include/qt/QtCore/QSharedDataPointer \
@@ -268,6 +270,8 @@
   /usr/include/qt/QtCore/qdeadlinetimer.h \
   /usr/include/qt/QtCore/qdebug.h \
   /usr/include/qt/QtCore/qelapsedtimer.h \
+  /usr/include/qt/QtCore/qfile.h \
+  /usr/include/qt/QtCore/qfiledevice.h \
   /usr/include/qt/QtCore/qflags.h \
   /usr/include/qt/QtCore/qgenericatomic.h \
   /usr/include/qt/QtCore/qglobal.h \
@@ -283,6 +287,7 @@
   /usr/include/qt/QtCore/qmap.h \
   /usr/include/qt/QtCore/qmargins.h \
   /usr/include/qt/QtCore/qmetatype.h \
+  /usr/include/qt/QtCore/qmutex.h \
   /usr/include/qt/QtCore/qnamespace.h \
   /usr/include/qt/QtCore/qnumeric.h \
   /usr/include/qt/QtCore/qobject.h \
@@ -313,6 +318,7 @@
   /usr/include/qt/QtCore/qtcore-config.h \
   /usr/include/qt/QtCore/qtextstream.h \
   /usr/include/qt/QtCore/qthread.h \
+  /usr/include/qt/QtCore/qtsan_impl.h \
   /usr/include/qt/QtCore/qtypeinfo.h \
   /usr/include/qt/QtCore/qvariant.h \
   /usr/include/qt/QtCore/qvarlengtharray.h \
@@ -360,6 +366,14 @@
   /usr/include/qt/QtGui/qvector3d.h \
   /usr/include/qt/QtGui/qvector4d.h \
   /usr/include/qt/QtGui/qwindowdefs.h \
+  /usr/include/qt/QtMultimedia/QAudioInput \
+  /usr/include/qt/QtMultimedia/qaudio.h \
+  /usr/include/qt/QtMultimedia/qaudiodeviceinfo.h \
+  /usr/include/qt/QtMultimedia/qaudioformat.h \
+  /usr/include/qt/QtMultimedia/qaudioinput.h \
+  /usr/include/qt/QtMultimedia/qmultimedia.h \
+  /usr/include/qt/QtMultimedia/qtmultimedia-config.h \
+  /usr/include/qt/QtMultimedia/qtmultimediaglobal.h \
   /usr/include/qt/QtWidgets/QComboBox \
   /usr/include/qt/QtWidgets/QOpenGLWidget \
   /usr/include/qt/QtWidgets/QPushButton \

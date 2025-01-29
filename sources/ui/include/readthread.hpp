@@ -1,5 +1,6 @@
 #pragma once
 
+#include "audiosave.hpp"
 #include <QThread>
 #include <QTime>
 #include <qobject.h>
@@ -25,6 +26,7 @@ public:
     void close();
     QString const &url() const;
     void saveVideo(QString const &filename);
+    void saveAudio(QString const &filename);
     void stop();
 
 protected:
@@ -37,6 +39,7 @@ signals:
 private:
     VideoDecode *m_videoDecode = nullptr;
     VideoSave *m_videoSave = nullptr;
+    AudioSave* m_audioSave = nullptr;
     QString m_url;
     bool m_play = false;
 };
